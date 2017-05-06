@@ -7,4 +7,8 @@ public class Impl {
         double a = 4.0 * 4;
     }
 
+    public double implMethod2() {
+        return 4.0 * 4;
+    }
+
 }
