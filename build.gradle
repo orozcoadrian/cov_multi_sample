@@ -20,11 +20,13 @@ subprojects {
 //    apply plugin: 'eclipse-wtp'
 
     repositories {
+        jcenter()
         mavenCentral()
     }
 
     dependencies {
         testCompile 'junit:junit:4.11'
+//        testCompile group: 'org.testng', name: 'testng', version: '5.7'
     }
 
     version = '1.0'
@@ -33,7 +35,7 @@ subprojects {
         manifest.attributes provider: 'gradle'
     }
 
-    test.useTestNG()
+//    test.useTestNG()
 }
 
 task codeCoverageReport(type: JacocoReport) {
@@ -46,7 +48,7 @@ task codeCoverageReport(type: JacocoReport) {
     reports {
         xml.enabled true
         xml.destination "${buildDir}/reports/jacoco/report.xml"
-        html.enabled false
+        html.enabled true
         csv.enabled false
     }
 }
